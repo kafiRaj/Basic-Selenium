@@ -1,10 +1,21 @@
 package com.login;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -14,6 +25,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.google.common.io.Files;
+
 
 
 public class LoginPageTest {
@@ -79,18 +92,24 @@ public class LoginPageTest {
 		report.setSystemInfo("Browser", "Chrome");
 		
 
-
-		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-		driver = new ChromeDriver();
 	}
 
+	
+	@BeforeMethod
+	public void beforeMethod() {
+		
+		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+	}
 
 
 
 	@Test(dataProvider = "ValidData")
 	public void  validTest(String email, String password) throws InterruptedException {
 
-
+		logger = report.createTest("Valid Test");
 
 		driver.get(baseUrl);
 		WebElement Email = driver.findElement(By.id("input-email"));
@@ -105,8 +124,10 @@ public class LoginPageTest {
 
 		loginButton.click();
 		
-		logger = report.createTest("Valid Test");
-		logger.log(Status.PASS, "Test Passed");
+		WebElement myAccount = driver.findElement(By.xpath("//*[@id=\"content\"]/h2[1]"));
+		String myAccountText = myAccount.getText();
+		
+		Assert.assertEquals("My Account", myAccountText);
 		
 
 
@@ -115,7 +136,7 @@ public class LoginPageTest {
 	@Test(dataProvider="InvalidData")
 	public void invalidTest(String email, String password) {
 
-
+		logger = report.createTest("Invalid Test");
 
 		driver.get(baseUrl);
 
@@ -131,24 +152,54 @@ public class LoginPageTest {
 
 		loginButton.click();
 
+		WebElement warning = driver.findElement(By.xpath("//*[@id=\"account-login\"]/div[1]"));
+		String warningText = warning.getText();
+		Assert.assertEquals("Warning: No match for E-Mail Address", warningText);
 
-		logger = report.createTest("Invalid Test");
-		logger.log(Status.PASS, "Test Passed");
-
-
-
+		
 	}
-
-
+	
+	
+	
 	@AfterTest
 	public void afterTest() {
 
-		report.flush();
-		driver.close();
-
+		report.flush();		
+		driver.quit();
+	}
+	
+	
+	
+	@AfterMethod
+	public void tearDown(ITestResult result) throws IOException {
+		
+		
+		if(result.getStatus()==ITestResult.FAILURE) {
+			
+			logger.log(Status.FAIL, "Test Case Failed is "+result.getName());
+			logger.log(Status.FAIL, "Test Case Failed is "+result.getThrowable());
+								
+		} 
+		
+		else if(result.getStatus()==ITestResult.SUCCESS) {
+			logger.log(Status.PASS, "Test Passed"+result.getName());
+			
+		}
+		
+		else if(result.getStatus()==ITestResult.SKIP) {
+			
+			logger.log(Status.SKIP, "Test is Skipped" +result.getName());			
+		}
+		
+		
+		
+		driver.close();		
+		
 	}
 
 
 
+	
+	 
 
 }

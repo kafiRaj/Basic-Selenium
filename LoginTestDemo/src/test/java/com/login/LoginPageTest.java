@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -25,7 +26,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.google.common.io.Files;
 
 
 
@@ -178,7 +178,11 @@ public class LoginPageTest {
 			
 			logger.log(Status.FAIL, "Test Case Failed is "+result.getName());
 			logger.log(Status.FAIL, "Test Case Failed is "+result.getThrowable());
-								
+				
+			
+			String screenshotPath = LoginPageTest.getScreenshot(driver, result.getName());
+			   logger.addScreenCaptureFromPath(screenshotPath);// adding screen shot
+			
 		} 
 		
 		else if(result.getStatus()==ITestResult.SUCCESS) {
@@ -197,6 +201,21 @@ public class LoginPageTest {
 		
 	}
 
+	 public static String getScreenshot(WebDriver driver, String screenshotName) throws IOException {
+		  
+		 
+		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+		  
+		 TakesScreenshot ts = (TakesScreenshot) driver;
+		 File source = ts.getScreenshotAs(OutputType.FILE);
+		  
+		  // after execution, you could see a folder "FailedTestsScreenshots" under src folder 
+		  String destination = System.getProperty("user.dir") + "/Screenshots/" + screenshotName +" "+ dateName + ".png";
+		  
+		  FileUtils.copyFile(source, new File(destination));
+		  
+		  return destination;
+		 }
 
 
 	

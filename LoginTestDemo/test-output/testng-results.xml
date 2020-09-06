@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="48874" started-at="2020-09-06T23:34:23 BDT" finished-at="2020-09-06T23:35:12 BDT">
+  <suite name="Default suite" duration-ms="32035" started-at="2020-09-07T01:03:57 BDT" finished-at="2020-09-07T01:04:29 BDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="48874" started-at="2020-09-06T23:34:23 BDT" finished-at="2020-09-06T23:35:12 BDT">
+    <test name="Default test" duration-ms="32035" started-at="2020-09-07T01:03:57 BDT" finished-at="2020-09-07T01:04:29 BDT">
       <class name="com.login.LoginPageTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.login.LoginPageTest@436e852b]" name="beforeTest" is-config="true" duration-ms="294" started-at="2020-09-06T23:34:23 BDT" finished-at="2020-09-06T23:34:23 BDT">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.login.LoginPageTest@6b9651f3]" name="beforeTest" is-config="true" duration-ms="259" started-at="2020-09-07T01:03:57 BDT" finished-at="2020-09-07T01:03:57 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.login.LoginPageTest@436e852b]" name="beforeMethod" is-config="true" duration-ms="17796" started-at="2020-09-06T23:34:23 BDT" finished-at="2020-09-06T23:34:41 BDT">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.login.LoginPageTest@6b9651f3]" name="beforeMethod" is-config="true" duration-ms="11188" started-at="2020-09-07T01:03:57 BDT" finished-at="2020-09-07T01:04:09 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="invalidTest(java.lang.String, java.lang.String)[pri:0, instance:com.login.LoginPageTest@436e852b]" name="invalidTest" duration-ms="7656" started-at="2020-09-06T23:34:41 BDT" data-provider="InvalidData" finished-at="2020-09-06T23:34:49 BDT">
+        <test-method status="FAIL" signature="invalidTest(java.lang.String, java.lang.String)[pri:0, instance:com.login.LoginPageTest@6b9651f3]" name="invalidTest" duration-ms="4985" started-at="2020-09-07T01:04:09 BDT" data-provider="InvalidData" finished-at="2020-09-07T01:04:14 BDT">
           <params>
             <param index="0">
               <value>
@@ -75,22 +75,22 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.login.LoginPageTest@436e852b]" name="tearDown" is-config="true" duration-ms="260" started-at="2020-09-06T23:34:49 BDT" finished-at="2020-09-06T23:34:49 BDT">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.login.LoginPageTest@6b9651f3]" name="tearDown" is-config="true" duration-ms="2520" started-at="2020-09-07T01:04:14 BDT" finished-at="2020-09-07T01:04:16 BDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=invalidTest status=FAILURE method=LoginPageTest.invalidTest(java.lang.String, java.lang.String)[pri:0, instance:com.login.LoginPageTest@436e852b] output={null}]]]>
+                <![CDATA[[TestResult name=invalidTest status=FAILURE method=LoginPageTest.invalidTest(java.lang.String, java.lang.String)[pri:0, instance:com.login.LoginPageTest@6b9651f3] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.login.LoginPageTest@436e852b]" name="beforeMethod" is-config="true" duration-ms="5981" started-at="2020-09-06T23:34:49 BDT" finished-at="2020-09-06T23:34:55 BDT">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.login.LoginPageTest@6b9651f3]" name="beforeMethod" is-config="true" duration-ms="4595" started-at="2020-09-07T01:04:16 BDT" finished-at="2020-09-07T01:04:21 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="validTest(java.lang.String, java.lang.String)[pri:0, instance:com.login.LoginPageTest@436e852b]" name="validTest" duration-ms="13868" started-at="2020-09-06T23:34:55 BDT" data-provider="ValidData" finished-at="2020-09-06T23:35:09 BDT">
+        <test-method status="PASS" signature="validTest(java.lang.String, java.lang.String)[pri:0, instance:com.login.LoginPageTest@6b9651f3]" name="validTest" duration-ms="5938" started-at="2020-09-07T01:04:21 BDT" data-provider="ValidData" finished-at="2020-09-07T01:04:27 BDT">
           <params>
             <param index="0">
               <value>
@@ -106,18 +106,18 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.login.LoginPageTest@436e852b]" name="tearDown" is-config="true" duration-ms="278" started-at="2020-09-06T23:35:09 BDT" finished-at="2020-09-06T23:35:09 BDT">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.login.LoginPageTest@6b9651f3]" name="tearDown" is-config="true" duration-ms="257" started-at="2020-09-07T01:04:27 BDT" finished-at="2020-09-07T01:04:27 BDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=validTest status=SUCCESS method=LoginPageTest.validTest(java.lang.String, java.lang.String)[pri:0, instance:com.login.LoginPageTest@436e852b] output={null}]]]>
+                <![CDATA[[TestResult name=validTest status=SUCCESS method=LoginPageTest.validTest(java.lang.String, java.lang.String)[pri:0, instance:com.login.LoginPageTest@6b9651f3] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.login.LoginPageTest@436e852b]" name="afterTest" is-config="true" duration-ms="2651" started-at="2020-09-06T23:35:09 BDT" finished-at="2020-09-06T23:35:12 BDT">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.login.LoginPageTest@6b9651f3]" name="afterTest" is-config="true" duration-ms="2219" started-at="2020-09-07T01:04:27 BDT" finished-at="2020-09-07T01:04:29 BDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

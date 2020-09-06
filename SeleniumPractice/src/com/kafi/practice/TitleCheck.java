@@ -7,7 +7,7 @@ public class TitleCheck {
 	public static void main(String[] args) throws InterruptedException {
 		
 		//getting driver from Config Class
-		WebDriver driver = Config.getDriver();
+		WebDriver driver = Config.getFirefoxDriver();
 		
 		//opening account login page
 		driver.get("https://demo.opencart.com/index.php?route=account/login");

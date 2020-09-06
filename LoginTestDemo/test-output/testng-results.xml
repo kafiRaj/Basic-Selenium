@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="27693" started-at="2020-09-06T21:07:57 BDT" finished-at="2020-09-06T21:08:25 BDT">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="27693" started-at="2020-09-06T21:07:57 BDT" finished-at="2020-09-06T21:08:25 BDT">
+      <class name="com.login.LoginPageTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.login.LoginPageTest@37d31475]" name="beforeTest" is-config="true" duration-ms="10751" started-at="2020-09-06T21:07:57 BDT" finished-at="2020-09-06T21:08:08 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="invalidTest(java.lang.String, java.lang.String)[pri:0, instance:com.login.LoginPageTest@37d31475]" name="invalidTest" duration-ms="7960" started-at="2020-09-06T21:08:08 BDT" data-provider="InvalidData" finished-at="2020-09-06T21:08:16 BDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[example@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidTest -->
+        <test-method status="PASS" signature="validTest(java.lang.String, java.lang.String)[pri:0, instance:com.login.LoginPageTest@37d31475]" name="validTest" duration-ms="5694" started-at="2020-09-06T21:08:16 BDT" data-provider="ValidData" finished-at="2020-09-06T21:08:22 BDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[kafiraj.27@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[120862ks]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.login.LoginPageTest@37d31475]" name="afterTest" is-config="true" duration-ms="3217" started-at="2020-09-06T21:08:22 BDT" finished-at="2020-09-06T21:08:25 BDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.login.LoginPageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

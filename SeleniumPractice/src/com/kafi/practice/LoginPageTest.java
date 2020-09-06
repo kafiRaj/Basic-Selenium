@@ -1,18 +1,20 @@
 package com.kafi.practice;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+
 public class LoginPageTest {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		
 		
 		//getting driver from Config Class
-		WebDriver driver = Config.getDriver();
+		WebDriver driver = Config.getFirefoxDriver();
 		
 		//opening account login page
 		driver.get("https://demo.opencart.com/index.php?route=account/login");
@@ -30,7 +32,8 @@ public class LoginPageTest {
 		//finding password field
 		WebElement password = driver.findElement(By.id("input-password"));
 		
-		//inserting in password field
+		//inserting in password field		
+	
 		password.sendKeys("123456");
 
 		

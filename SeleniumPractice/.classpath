@@ -76,5 +76,6 @@
 	<classpathentry kind="lib" path="E:/Testing/Tools/selenium-java-4.0.0-alpha-6/lib/reactor-core-3.3.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="E:/Testing/Tools/selenium-java-4.0.0-alpha-6/lib/reactor-netty-0.9.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="E:/Testing/Tools/selenium-java-4.0.0-alpha-6/lib/slf4j-api-1.7.30.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

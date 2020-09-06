@@ -9,7 +9,7 @@ public class WindowSize {
 		
 			
 		//getting driver from Config Class
-		WebDriver driver = Config.getDriver();
+		WebDriver driver = Config.getFirefoxDriver();
 		
 		
 		//Open opencart website
